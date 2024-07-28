@@ -32,7 +32,11 @@
             background-color: #555;
         }
         .container {
+            display: none;
             padding: 20px;
+        }
+        .active {
+            display: block;
         }
         .section-title {
             margin-top: 20px;
@@ -54,32 +58,46 @@
             font-style: italic;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('container');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
+            }
+            document.getElementById(sectionId).classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            showSection('home');
+        });
+    </script>
 </head>
 <body>
     <header>
         <h1>Xiao Xiao's Personal Page</h1>
     </header>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Professional Experience</a>
-        <a href="#research">Research Summary</a>
-        <a href="#skills">Technical Skills</a>
-        <a href="#activities">Professional Activities</a>
-        <a href="#teaching">Teaching Experience</a>
-        <a href="#publications">Publications</a>
-        <a href="#mentees">Mentees</a>
-        <a href="#contact">Contact Information</a>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#education" onclick="showSection('education')">Education</a>
+        <a href="#experience" onclick="showSection('experience')">Professional Experience</a>
+        <a href="#research" onclick="showSection('research')">Research Summary</a>
+        <a href="#skills" onclick="showSection('skills')">Technical Skills</a>
+        <a href="#activities" onclick="showSection('activities')">Professional Activities</a>
+        <a href="#teaching" onclick="showSection('teaching')">Teaching Experience</a>
+        <a href="#publications" onclick="showSection('publications')">Publications</a>
+        <a href="#mentees" onclick="showSection('mentees')">Mentees</a>
+        <a href="#contact" onclick="showSection('contact')">Contact Information</a>
     </nav>
-    <div class="container">
-        <section id="home">
+    <div id="home" class="container active">
+        <section>
             <h2 class="section-title">Home</h2>
             <div class="content">
                 <img src="your-photo.jpg" alt="Xiao Xiao's Photo">
                 <p>I am Xiao Xiao, currently a Ph.D. student in Electrical and Computer Engineering at the National University of Singapore. My research focuses on energy storage/harvesting, sensing technologies, and bioinspired programmable materials for healthcare and sustainability.</p>
             </div>
         </section>
-        <section id="education">
+    </div>
+    <div id="education" class="container">
+        <section>
             <h2 class="section-title">Education</h2>
             <div class="content">
                 <p><strong>01/2022 – 12/2024</strong> Ph.D. student in Electrical and Computer Engineering, National University of Singapore, Singapore, SG</p>
@@ -88,7 +106,9 @@
                 <p><strong>08/2016 – 06/2020</strong> B.S. student in Materials Science and Engineering, Beihang University, Beijing, China</p>
             </div>
         </section>
-        <section id="experience">
+    </div>
+    <div id="experience" class="container">
+        <section>
             <h2 class="section-title">Professional Experience</h2>
             <div class="content">
                 <p><strong>08/2021 – 01/2022</strong> Research Assistant, Southern University of Science and Technology, Shenzhen, China</p>
@@ -97,13 +117,17 @@
                 <p><strong>01/2017 – 10/2020</strong> Undergraduate research student, Technical Institute of Physics and Chemistry CAS, Beijing, China</p>
             </div>
         </section>
-        <section id="research">
+    </div>
+    <div id="research" class="container">
+        <section>
             <h2 class="section-title">Research Summary</h2>
             <div class="content">
                 <p>My research focuses on the intersection of energy storage/harvesting, sensing technologies, and bioinspired programmable materials for healthcare and sustainability.</p>
             </div>
         </section>
-        <section id="skills">
+    </div>
+    <div id="skills" class="container">
+        <section>
             <h2 class="section-title">Technical Skills</h2>
             <div class="content">
                 <ul>
@@ -117,7 +141,9 @@
                 </ul>
             </div>
         </section>
-        <section id="activities">
+    </div>
+    <div id="activities" class="container">
+        <section>
             <h2 class="section-title">Professional Activities</h2>
             <div class="content">
                 <ul>
@@ -128,111 +154,129 @@
                 </ul>
             </div>
         </section>
-        <section id="teaching">
+    </div>
+    <div id="teaching" class="container">
+        <section>
             <h2 class="section-title">Teaching Experience</h2>
             <div class="content">
                 <p>Teaching Assistant: EEK5104 Bioelectronics, EE2026 Digital Design, EE1111 and EE2111 Electrical Engineering Principles and Practice at NUS.</p>
             </div>
         </section>
-        <section id="publications">
+    </div>
+    <div id="publications" class="container">
+        <section>
             <h2 class="section-title">Publications</h2>
             <div class="content">
                 <p>Over 90 papers published, more than 5800 citations, H-index of 43 (as of July 2024).</p>
                 <ol class="publications">
-                    <li><b>X. Xiao</b>, C. Zhang, H. Ma, Y. Zhang, G. Liu, M. Cao, C. Yu*, L. Jiang*. Bioinspired slippery cone for controllable manipulation of gas bubbles in low-surface-tension environment. <i>ACS Nano</i>, 2019, 13 (4), 4083-4090.</li>
-                    <li>C. Zhang, Y. Zhang, <b>X. Xiao</b>, G. Liu, Z. Xu, B. Wang, C. Yu*, R. Ras, L. Jiang. Efficient separation of immiscible oil/water mixtures using a perforated lotus leaf. <i>Green Chemistry</i>, 2019, 21 (24), 6579-6584.</li>
-                    <li>C. Zhang, B. Zhang, H. Ma, Z. Li, <b>X. Xiao</b>, Y. Zhang, X. Cui, C. Yu*, M. Cao*, L. Jiang. Bioinspired pressure-tolerant asymmetric slippery surface for continuous self-transport of gas bubbles in aqueous environment. <i>ACS Nano</i>, 2018, 12 (2), 2048-2055.</li>
-                    <li>Z. Meng, S. Casanova, H. Mohamed, N. Kapil, <b>X. Xiao</b>, Y. Zhang, M. Coppens*, D. Mattia*. Polymer nanotube membranes synthesized via liquid deposition in anodic alumina. <i>Colloid and Interface Science Communications</i>. 2020, 39, 100334.</li>
-                    <li>L. Jin†, <b>X. Xiao</b>†, W. Deng, A. Nashalian, D. He, V. Raveendran, C. Yan, H. Su, X. Chu, T. Yang, W. Li, W. Yang, J. Chen*. Manipulating relative permittivity for high-performance wearable triboelectric nanogenerators. <i>Nano Letters</i>, 2020, 20 (9), 6404-6411.</li>
-                    <li>S. Shen†, <b>X. Xiao</b>†, J. Chen*. Wearable Triboelectric Nanogenerators for Heart Rate Monitoring. <i>Chemical Communications</i>, 2021, 57, 5871-5879.</li>
-                    <li>X. Yan†, <b>X. Xiao</b>†, C. Au, S. Mathur, L. Huang*, Y. Wang, Z. Zhang, Z. Zhu, M. Kipper, J. Tang*, J. Chen*. Electrospinning nanofibers and nanomembranes for oil/water separation. <i>Journal of Materials Chemistry A</i>, 2021, 9, 21659-21684.</li>
-                    <li>M. Mahmud†, T. Tat†, <b>X. Xiao</b>†, P. Adhikary, J. Chen*. Advances in 4D‐printed physiological monitoring sensors. <i>Exploration</i>, 2021, 1 (3), 210033.</li>
-                    <li>G. Chen†, <b>X. Xiao</b>†, X. Zhao†, T Tat, M Bick, J Chen*. Electronic Textiles for Wearable Point-of-Care Systems. <i>Chemical Reviews</i>, 2021, 122 (3), 3259–3291.</li>
-                    <li><b>X. Xiao</b>†, G. Chen†, A. Libanori, J. Chen*. Wearable triboelectric nanogenerators for therapeutics. <i>Trends in Chemistry</i>, 2021, 3 (4), 279-290.</li>
-                    <li><b>X. Xiao</b>, S. Li, X. Zhu, X. Xiao, C. Zhang, F. Jiang, C. Yu*, L. Jiang. Bioinspired two-dimensional structure with asymmetric wettability barriers for unidirectional and long-distance gas bubble delivery underwater. <i>Nano Letters</i>, 2021, 21 (5), 2117-2123.</li>
-                    <li>S. Zhang, M. Bick, <b>X. Xiao</b>, G. Chen, A. Nashalian, J. Chen*. Leveraging triboelectric nanogenerators for bioengineering. <i>Matter</i>, 2021, 4 (3), 845-887.</li>
-                    <li>Y. Fang, X. Zhao, T. Tat, <b>X. Xiao</b>, G. Chen, J. Xu, J. Chen. All-in-one conformal epidermal patch for multimodal biosensing. <i>Matter</i>, 2021, 4 (4), 1102-1105.</li>
-                    <li>X. Chu, G. Chen, <b>X. Xiao</b>, Z. Wang, T. Yang, Z. Xu, H. Huang, Y. Wang, C. Yan, N. Chen, H. Zhang, W. Yang*, J. Chen*. Air-Stable Conductive Polymer Ink for Printed Wearable Micro-Supercapacitors. <i>Small</i>, 2021, 17 (25), 2100956.</li>
-                    <li><b>X. Xiao</b>†, X. Xiao†, Y. Lan, J. Chen*. Learning from nature for healthcare, energy and environment. <i>The Innovation</i>, 2021, 2 (3), 100135.</li>
-                    <li>Z. Zhang†, <b>X. Xiao</b>†, Y. Zhou, L. Huang*, Y. Wang, Q. Rong, Z. Han, H. Qu, Z. Zhu, S. Xu, J. Tang*, J. Chen*. Bioinspired Graphene Oxide Membranes with pH-Responsive Nanochannels for High-Performance Nanofiltration. <i>ACS Nano</i>, 2021, 15 (8), 13178–13187.</li>
-                    <li><b>X. Xiao</b>, X. Xiao, A. Nashalian, A. Libanori, Y. Fang, X. Li, J. Chen*. Triboelectric Nanogenerators for Self‐Powered Wound Healing. <i>Advanced Healthcare Materials</i>, 2021, 10 (20), 2100975.</li>
-                    <li>Y. Luo, Z. Wang, J. Wang, <b>X. Xiao</b>, Q. Li, W. Ding*, H. Fu*. Triboelectric bending sensor based smart glove towards intuitive multi-dimensional human-machine interfaces. <i>Nano Energy</i>, 2021, 89, 106330.</li>
-                    <li>S. Parandeh, N. Etemadi, M. Kharaziha, G. Chen, A. Nashalian, <b>X. Xiao</b>, J. Chen*. Advances in triboelectric nanogenerators for self‐powered regenerative medicine. <i>Advanced Functional Materials</i>, 2021, 31 (47), 2105169.</li>
-                    <li><b>X. Xiao</b>, Y. Fang, X. Xiao, J. Xu, J. Chen*. Machine-Learning-Aided Self-Powered Assistive Physical Therapy Devices. <i>ACS Nano</i>, 2021, 15 (12), 18633–18646.</li>
-                    <li>X. Zhao, Y. Zhou, J. Xu, G. Chen, Y. Fang, T. Tat, <b>X. Xiao</b>, Y. Song, S. Li, J. Chen*. Soft fibers with magnetoelasticity for wearable electronics. <i>Nature Communications</i>, 2021, 12, 6755.</li>
-                    <li><b>X. Xiao</b>†, X. Xiao†, Y. Zhou, X. Zhao, G. Chen, Z. Liu, Z. Wang, C. Lu, M. Hu, A. Nashalian, S. Shen, K. Xie, W. Yang, Y. Gong*, W. Ding, P. Servati, C. Han, S. Dou, W. Li*, Jun Chen*. An ultrathin rechargeable solid-state zinc ion fiber battery for electronic textiles. <i>Science Advances</i>, 2021, 7 (49), eabl3742.</li>
-                    <li>S. Shen†, <b>X. Xiao</b>†, X. Xiao, J. Chen*. Triboelectric Nanogenerators for Self-Powered Breath Monitoring. <i>ACS Applied Energy Materials</i>, 2022, 5 (4), 3952–3965.</li>
-                    <li>W. Deng, A. Libanori, <b>X. Xiao</b>, J. Fang, X. Zhao, Y. Zhou, G. Chen, S. Li, J. Chen*. Computational investigation of ultrasound induced electricity generation via a triboelectric nanogenerator. <i>Nano Energy</i>, 2022, 91, 106656.</li>
-                    <li>Z. Lin, G. Zhang, <b>X. Xiao</b>, C. Au, Y. Zhou, C. Sun, Z. Zhou, R. Yan, E. Fan, S. Si, L. Weng, S. Mathur, J. Yang*, J. Chen*. A Personalized Acoustic Interface for Wearable Human–Machine Interaction. <i>Advanced Functional Materials</i>, 2022, 32 (9), 2109430.</li>
-                    <li>Q. Wei, G. Chen, H. Pan, Z. Ye, C. Au, C. Chen, X. Zhao, Y. Zhou, <b>X. Xiao</b>, H. Tai, Y. Jiang, G. Xie, Y. Su, J. Chen*. MXene‐Sponge Based High‐Performance Piezoresistive Sensor for Wearable Biomonitoring and Real‐Time Tactile Sensing. <i>Small Methods</i>, 2022, 6 (2), 2101051.</li>
-                    <li>Z. Han†, <b>X. Xiao</b>†, H. Qu, M. Hu, C. Au, A. Nashalian, X. Xiao, Y. Wang, L. Yang, F. Jia, T. Wang, Z. Ye, P. Servati, L. Huang*, Z. Zhu, J. Tang*, J. Chen*. Ultrafast and Selective Nanofiltration Enabled by Graphene Oxide Membranes with Unzipped Carbon Nanotube Networks. <i>ACS Applied Materials & Interfaces</i>, 2022, 14 (1), 1850–1860.</li>
-                    <li>H. Liu, C. Wang, G. Chen, Y. Liao, M. Mao, T. Cheng, A. Libanori, <b>X. Xiao</b>, X. Hu, K. Liu, J. Chen*. Moisture assisted photo-engineered textiles for visible and self-adaptive infrared dual camouflage. <i>Nano Energy</i>, 2022, 93, 106855.</li>
-                    <li>Y. Zhai, J. Li, S. Shen, Z. Zhu, S. Mao, <b>X. Xiao</b>, C. Zhu, J. Tang, X. Lu, J. Chen*. Recent Advances on Dual‐Band Electrochromic Materials and Devices. <i>Advanced Functional Materials</i>, 2022, 32 (17), 2109848.</li>
-                    <li>K. Meng†, <b>X. Xiao</b>†, W. Wei, G. Chen, A. Nashalian, S. Shen, X. Xiao, J. Chen*. Wearable pressure sensors for pulse wave monitoring. <i>Advanced Materials</i>, 2022, 34 (21), 2109357.</li>
-                    <li>L. Yang†, <b>X. Xiao</b>†, S. Shen, J. Lama, M. Hu, F. Jia, Z. Han, H. Qu, L. Huang*, Y. Wang*, T. Wang, Z. Ye, Z. Zhu, J. Tang*, J. Chen*. Recent Advances in Graphene Oxide Membranes for Nanofiltration. <i>ACS Applied Nano Materials</i>, 2022, 5 (3), 3121–3145.</li>
-                    <li>X. Li†, <b>X. Xiao</b>†, C. Bai, M. Mayer, X. Cui, K. Lin, Y. Li, H. Zhang*, J. Chen*. Thermogalvanic Hydrogels for Self-Powered Temperature Monitoring in Extreme Environments. <i>Journal of Materials Chemistry C</i>, 2022, 10, 13789-13796.</li>
-                    <li>Q. Wang, S. He, C. Bowen, <b>X. Xiao</b>, J. Oh, J. Sun, K. Zeng, W. Lei, J. Chen*. Porous Pyroelectric Ceramic with Carbon Nanotubes for High-Performance Thermal to Electrical Energy Conversion. <i>Nano Energy</i>, 2022, 102, 107703.</li>
-                    <li>B. Dai†, Y. Zhou†, <b>X. Xiao</b>†, Y. Chen, J. Guo, C. Gao, Y. Xie, J. Chen*. Fluid Field Modulation in Mass Transfer for Efficient Photocatalysis. <i>Advanced Science</i>, 2022, 9 (28), 2203057.</li>
-                    <li>B. Lan†, <b>X. Xiao</b>†, A. Carlo, W. Deng, T. Yang, L. Jin, G. Tian, Y. Ao, W. Yang*, J. Chen*. Topological Nanofibers Enhanced Piezoelectric Membranes for Soft Bioelectronics. <i>Advanced Functional Materials</i>, 2022, 32 (49), 2207393.</li>
-                    <li>M. Mayer†, <b>X. Xiao</b>†, J. Yin, G. Chen, J. Xu, J. Chen*. Advances in Bioinspired Triboelectric Nanogenerators. <i>Advanced Electronic Materials</i>, 2022, 8 (12), 2200782.</li>
-                    <li>D. Yu†, <b>X. Xiao</b>†, C. Shokoohi, Y. Wang*, L. Sun, Z. Juan, M. Kipper, J. Tang*, L. Huang*, G. Han, H. Jung, J. Chen*. Recent Advances in Stimuli‐Responsive Smart Membranes for Nanofiltration. <i>Advanced Functional Materials</i>, 2022, 33 (9), 2211983.</li>
-                    <li>B. Liu, A. Libanori, Y. Zhou, <b>X. Xiao</b>, G. Xie, X. Zhao, Y. Su, S. Wang, Z. Yuan, Z. Duan, J. Liang, Y. Jiang, H. Tai*, J. Chen*. Simultaneous Biomechanical and Biochemical Monitoring for Self-Powered Breath Analysis. <i>ACS Applied Materials & Interfaces</i>, 2022, 14 (5), 7301–7310.</li>
-                    <li>P. Abiri, Y. Luo, Z. Huang, Q. Cui, S. Duarte-Vogel, M. Roustaei, C. Chang, <b>X. Xiao</b>, R. Packard, S. Cavallero, R. Ebrahimi, P. Benharash, J. Chen, Y. Tai, T. Hsiai*. 3-Dimensional electrical impedance spectroscopy for in situ endoluminal mapping of metabolically active plaques. <i>Sensors and Actuators B: Chemical</i>, 2022, 354, 131152.</li>
-                    <li>Y. Fang, J. Xu, <b>X. Xiao</b>, Y. Zou, X. Zhao, Y. Zhou, J. Chen*. A Deep-learning-assisted on‐mask sensor network for adaptive respiratory monitoring. <i>Advanced Materials</i>, 2022, 34 (24), 2200252.</li>
-                    <li>Y. Luo, <b>X. Xiao</b>, J. Chen, Q. Li, H. Fu*. Machine-Learning-Assisted Recognition on Bioinspired Soft Sensor Arrays. <i>ACS Nano</i>, 2022, 16 (4), 6734–6743.</li>
-                    <li>H. Qu†, <b>X. Xiao</b>†, Z. Han, M. Hu, S. Shen, L. Yang, F. Jia, T. Wang, Z. Ye. W. Sun, L. Y. Wang*, Huang*, Z. Zhu, P. Servati, J. Tang*, J. Chen*. Graphene Oxide Nanofiltration Membrane Based on Three-Dimensional Size-Controllable Metal–Organic Frameworks for Water Treatment. <i>ACS Applied Nano Materials</i>, 2022, 5 (4), 5196–5207.</li>
-                    <li>A. Chang†, C. Uy†, <b>X. Xiao</b>†, J. Chen*. Self-Powered Environmental Monitoring Via a Triboelectric Nanogenerator. <i>Nano Energy</i>, 2022, 98, 107282.</li>
-                    <li>F. Jia†, <b>X. Xiao</b>†, A. Nashalian, S. Shen, L. Yang, Z. Han, H. Qu, T. Wang, Z. Ye, Z. Zhu, L. Huang*, Y. Wang*, J. Tang*, J. Chen*. Advances in graphene oxide membranes for water treatment. <i>Nano Research</i>, 2022, 15, 6636–6654.</li>
-                    <li><b>X. Xiao</b>, J. Yin, G. Chen, S. Shen, A. Nashalian, J. Chen*. Bioinspired acoustic textiles with nanoscale vibrations for wearable biomonitoring. <i>Matter</i>, 2022, 5 (5), 1342-1345.</li>
-                    <li>C. Zhang†, <b>X. Xiao</b>†, Y. Zhang†, Z. Liu, X. Xiao, A. Nashalian, X. Wang, M. Cao*, X. He, J. Chen*, L. Jiang, C. Yu*. Bioinspired Anisotropic Slippery Cilia for Stiffness-Controllable Bubble Transport. <i>ACS Nano</i>, 2022, 16 (6), 9348–9358.</li>
-                    <li>K. Meng†, <b>X. Xiao</b>†, Z. Liu, S. Shen, T. Tat, Z. Wang, C. Lu, W. Ding, X. He, J. Yang*, J. Chen*. Kirigami Inspired Pressure Sensors for Wearable Dynamic Cardiovascular Monitoring. <i>Advanced Materials</i>, 2022, 34 (36), 2202478.</li>
-                    <li>Y. Zhou, <b>X. Xiao</b>, G. Chen, X. Zhao, J Chen*. Self-powered sensing technologies for human Metaverse interfacing. <i>Joule</i>, 2022, 6 (7), 1381-1389.</li>
-                    <li>R. Guo, Y. Fang, Z. Wang, A. Libanori, <b>X. Xiao</b>, D. Wan, X. Cui, S. Sang, W. Zhang, H. Zhang*, J. Chen*. Deep Learning Assisted Body Area Triboelectric Hydrogel Sensor Network for Infant Care. <i>Advanced Functional Materials</i>, 2022, 32 (35), 2204803.</li>
-                    <li>Y. Su, W. Li, X. Cheng, Y. Zhou, S. Yang, X. Zhang, C. Chen, T. Yang, H. Pan, G. Xie, G. Chen, X. Zhao, <b>X. Xiao</b>, B. Li*, H. Tai, Y. Jiang, L. Chen, F. Li*, J. Chen*. High-performance piezoelectric composites via β phase programming. <i>Nature Communications</i>, 2022, 13, 4867.</li>
-                    <li>J. Xu, T. Tat, X. Zhao, Y. Zhou, D. Ngo, <b>X. Xiao</b>, J. Chen*. A programmable magnetoelastic sensor array for self-powered human–machine interface. <i>Applied Physics Reviews</i>, 2022, 9 (3), 031404.</li>
-                    <li>Y. Deng, Y. Wang, <b>X. Xiao</b>, B. Saucedo, Z. Zhu*, M. Xie, X. Xu, K. Yao, Yanling Zhai*, Zhen Zhang*, Jun Chen*. Progress in hybridization of covalent organic frameworks and metal–organic frameworks. <i>Small</i>, 2022, 18 (38), 2202928.</li>
-                    <li>S. Shen†, <b>X. Xiao</b>†, J. Yin, X. Xiao, J Chen*. Self‐Powered Smart Gloves Based on Triboelectric Nanogenerators. <i>Small Methods</i>, 2022, 6 (10), 2200830.</li>
-                    <li>J. Xu, H. Cai, Z. Wu, C. Tian, X. Li, Z. Ao, V. Niu, <b>X. Xiao</b>, L. Jiang, M. Khodoun, M. Rothenberg, K. Mackie, J. Chen*, L. Lee*, F. Guo*. Acoustic metamaterials driven transdermal drug delivery for rapid and on-demand management of acute disease. <i>Nature Communications</i>, 2022, 14, 869.</li>
-                    <li>A. Alagumalai, O. Mahian, K. Vimal, L. Yang, <b>X. Xiao</b>, S. Saeidi, P. Zhang, T. Saboori, S. Wongwises, Z. Wang, J. Chen*. A contextual framework development toward triboelectric nanogenerator commercialization. <i>Nano Energy</i>, 2022, 101, 107572.</li>
-                    <li><b>X. Xiao</b>, J. Yin, S. Shen, Z. Che, X. Wan, S. Wang, J. Chen. Advances in solid-state fiber batteries for wearable bioelectronics. <i>Current Opinion in Solid State and Materials Science</i>, 2022, 26 (6), 101042.</li>
-                    <li>A. Libanori, J. Soto, J. Xu, Y. Song, J. Zarubova, T. Tat, <b>X. Xiao</b>, S. Yue, S. Jonas, S. Li, J. Chen. Self‐Powered Programming of Fibroblasts into Neurons via a Scalable Magnetoelastic Generator Array. <i>Advanced Materials</i>, 2022, 35 (7), 2206933.</li>
-                    <li>Z. Peng†, <b>X. Xiao</b>†, J. Song, A. Libanori, C. Lee, K. Chen, Y. Gao, Y. Fang, J. Wang, Z. Wang, J. Chen, M. Leung. Improving Relative Permittivity and Suppressing Dielectric Loss of Triboelectric Layers for High-Performance Wearable Electricity Generation. <i>ACS Nano</i>, 2022, 16 (12), 20251-20262.</li>
-                    <li>Z. Peng, J. Shi, <b>X. Xiao</b>, Y. Hong, X. Li, W. Zhang, Y. Cheng, Z. Wang, W.Li, J. Chen, M. Leung, Z. Yang. Self-charging electrostatic face masks leveraging triboelectrification for prolonged air filtration. <i>Nature Communications</i>, 2022, 13 (1), 7835.</li>
-                    <li>S. Wang, W. Deng, T. Yang*, G. Tian, D. Xiong, <b>X. Xiao</b>, H. Zhang, Y. Sun, Y. Ao, J. Huang, J. Chen*, W. Yang*. Body-area sensor network featuring micropyramids for sports healthcare. <i>Nano Research</i>, 2023, 16 (1), 1330-1337.</li>
-                    <li>E. Elsanadidy, I. Mosa*, D. Luo, <b>X. Xiao</b>, J. Chen, Z. Wang*, J. Rusling*. Advances in Triboelectric Nanogenerators for Self-powered Neuromodulation. <i>Advanced Functional Materials</i>, 2023, 33 (8), 2211177.</li>
-                    <li>Y. Su†*, Y. Liu†, W. Li†, <b>X. Xiao</b>†, C. Chen, H. Lu, Z. Yuan, H. Tai, Y. Jiang, J. Zou*, G. Xie*, J. Chen*. Sensing–transducing coupled piezoelectric textiles for self-powered humidity detection and wearable biomonitoring. <i>Materials Horizons</i>, 2023, 10, 842-851.</li>
-                    <li>G. Ge, K. Mandal, R. Haghniaz, M. Li, <b>X. Xiao</b>, L. Carlson, V. Jucaud, M. Dokmeci, G. Ho*, A. Khademhosseini*. Deep Eutectic Solvents-Based Ionogels with Ultrafast Gelation and High Adhesion in Harsh Environments. <i>Advanced Functional Materials</i>, 2023, 33 (9), 2207388.</li>
-                    <li>Z. Gao†, <b>X. Xiao</b>†, A. Carlo, J. Yin, Y. Wang*, L. Huang*, J. Tang*, J. Chen*. Advances in Wearable Strain Sensors Based on Electrospun Fibers. <i>Advanced Functional Materials</i>, 2023, 33 (18), 2214265.</li>
-                    <li>Z. Che, S. O'Donovan, <b>X. Xiao</b>, X. Wan, G. Chen, X. Zhao, Y. Zhou, J. Yin, J. Chen*. Implantable Triboelectric Nanogenerators for Self‐Powered Cardiovascular Healthcare. <i>Small</i>, 2023, 19 (51), 2207600.</li>
-                    <li>J. Xu, T. Tat, X. Zhao, <b>X. Xiao</b>, Y. Zhou, J. Yin, K. Chen, J. Chen*. Spherical Magnetoelastic Generator for Multidirectional Vibration Energy Harvesting. <i>ACS Nano</i>, 2023, 17 (4), 3865-3872.</li>
-                    <li>H. Ma†, H. Qin†, <b>X. Xiao</b>†, N. Liu, S. Wang, J. Li, S. Shen, S. Dai, M. Sun, P. Li, X. Pan, M. Huang, B. Lu, J. Chen*, L. Wu*. Robust hydrogel sensors for unsupervised learning enabled sign-to-verbal translation. <i>Infomat</i>, 2023, 5 (7), e12419.</li>
-                    <li>Y. Li, J. Yin, S. Liu, B. Xue, C. Shokoohi, G. Ge, M. Hu, T. Li, X. Tao, Z. Rao, F. Meng, H. Shi, X. Ji*, P. Servati, <b>X. Xiao</b>*, J. Chen*. Learning Hand Kinematics for Parkinson's Disease Assessment Using a Multimodal Sensor Glove. <i>Advanced Science</i>, 2023, 10 (20), 2206982.</li>
-                    <li>D. Choi, Y. Lee, Z. Lin, S. Cho, M. Kim, C. Ao, S. Soh, C. Sohn, C. Jeong, J. Lee, M. Lee, S. Lee, J. Ryu, P. Parashar, Y. Cho, J. Ahn, I. Kim, F. Jiang, P. Lee, G. Khandelwal, S. Kim, H. Kim, H. Song, M. Kim, J. Nah, W. Kim, H. Menge, Y. Park, W. Xu, J. Hao, H. Park, J. Lee, D. Lee, S. Kim, J. Park, H. Zhang, Y. Zi, R. Guo, J. Cheng, Z. Yang, Y. Xie, S. Lee, J. Chung, I. Oh, J. Kim, T. Cheng, Q. Gao, G. Cheng, G. Gu, M. Shim, J. Jung, C. Yun, C. Zhang, G. Liu, Y. Chen, S. Kim, X. Chen, J. Hu, X. Pu, Z. Guo, <b>X. Xiao</b>, X. Xie, M. Jarin, H. Zhang, Y. Lai, T. He, H. Kim, I. Park, J. Ahn, N. Huynh, Y. Yang, Z. Wang, J. Baik, D. Choi. Recent advances in triboelectric nanogenerators: from technological progress to commercial applications. <i>ACS Nano</i>, 2023, 17 (12), 11087-11219.</li>
-                    <li>C. Zhang, <b>X. Xiao</b>, Z. Guo, L. Jiang, C. Yu*. Bubble transfer on wettability-heterogeneous surfaces. <i>Chinese Chemical Letters</i>, 2023, 34 (7), 107941.</li>
-                    <li>J. Yin, S. Wang, A. Carlo, A. Chang, X. Wan, J. Xu, <b>X. Xiao</b>, J. Chen*. Smart textiles for self-powered biomonitoring. <i>Med-X</i>, 2023, 1 (1), 3.</li>
-                    <li>X. Tian, Q. Zeng, S. Kurt, R. Li, D. Nguyen, Z. Xiong, Z. Li, X. Yang, <b>X. Xiao</b>, C. Wu, B. Tee, D. Nikolayev, C. Charles, J. Ho*. Implant-to-implant wireless networking with metamaterial textiles. <i>Nature Communications</i>, 2023, 14 (1), 4335.</li>
-                    <li>J. Xu, J. Yin, Y. Fang, <b>X. Xiao</b>, Y. Zou, S. Wang, J. Chen*. Deep learning assisted ternary electrification layered triboelectric membrane sensor for self-powered home security. <i>Nano Energy</i>, 2023, 113, 108524.</li>
-                    <li>J. Li†, B. Xia†, <b>X. Xiao</b>†, Z. Huang, J. Yin, Y. Jiang, S. Wang, H. Gao, Q. Shi, Y. Xie*, J. Chen*. Stretchable Thermoelectric Fibers with Three-Dimensional Interconnected Porous Network for Low-Grade Body Heat Energy Harvesting. <i>ACS Nano</i>, 2023, 17 (19), 19232–19241.</li>
-                    <li>T. Zhao†, <b>X. Xiao</b>†, Y. Wu, J. Ma, Y. Li, C. Lu, C. Shokoohi, Y. Xu, X. Zhang, Y. Zhang, G. Ge, G. Zhang, J. Chen*, Y. Zeng*. Tracing the Flu Symptom Progression via a Smart Face Mask. <i>Nano Letters</i>, 2023, 23 (19), 8960–8969.</li>
-                    <li>H. Ma†, J. Hou†, <b>X. Xiao</b>†, R. Wan, G. Ge, W. Zheng, C. Chen, J. Cao, J. Wang, C. Liu, Q. Zhao, Z. Zhang, P. Jiang, S. Chen, W. Xiong, J. Xu, B. Lu*. Self-healing electrical bioadhesive interface for electrophysiology recording. <i>Journal of Colloid and Interface Science</i>, 2023, 654, 639-648.</li>
-                    <li><b>X. Xiao</b>, Y. Zhou, J. Yin, X. Zhao, J Chen*. In-ear electrophysichochemical sensing. <i>Nature Biomedical Engineering</i>, 2023, 7, 1207–1209.</li>
-                    <li>S. Mu, S. Li, H. Zhao, Z. Wang, <b>X. Xiao</b>, Z. Lin, Z. Song, H. Tang, Q. Xu, D. Wang, W. Lee*, C. Wu*, W. Ding*. A platypus-inspired electro-mechanosensory finger for remote control and tactile sensing. <i>Nano Energy</i>, 2024, 116, 108790.</li>
-                    <li>G. Ge†, Y. Zhang†, <b>X. Xiao</b>†, Y. Gong, C. Liu, C. Lyu, W. Ong, G. Ho*, Z. Yang*, W. Huang*. Rapidly Gelling, Highly Adhesive, and Mechanically Robust Ionogels for Stretchable and Wireless Electronics. <i>Advanced Functional Materials</i>, 2024, 2310963.</li>
-                    <li>J. Yin†, Q. Geng†, <b>X. Xiao</b>, S. Wang, L. Meng, N. Deng, J. Xu, B. Su, J. Chen, W. Zhao, L. Jin*, C. Zhao*. Mussel-inspired antibacterial sponge for highly efficient water purification and sterilization. <i>Journal of Hazardous Materials</i>, 2024, 461, 132598.</li>
-                    <li>J. Yin, V. Kashyap, S. Wang, <b>X. Xiao</b>, T. Tat, J. Chen*. Self-powered eye-computer interaction via a triboelectric nanogenerator. <i>Device</i>, 2024, 2 (1), 100252.</li>
-                    <li>Y. Zhou, S. Wang, J. Yin, J. Wang, F. Manshaii, <b>X. Xiao</b>, T. Zhang, H. Bao, S. Jiang*, J. Chen*. Flexible Metasurfaces for Multifunctional Interfaces. <i>ACS Nano</i>, 2024, 18 (4), 2685–2707.</li>
-                    <li>V. Kashyap, J. Yin, <b>X. Xiao</b>, J. Chen*. Bioinspired nanomaterials for wearable sensing and human-machine interfacing. <i>Nano Research</i>, 2024, 17 (2), 445-461.</li>
-                    <li>X. Wang, <b>X. Xiao</b>, Z. Feng, Y. Wu, J. Yang*, J. Chen*. A Soft Bioelectronic Patch for Simultaneous Respiratory and Cardiovascular Monitoring. <i>Advanced Healthcare Materials</i>, 2024, 13 (6), 2303479.</li>
-                    <li>S. Xu†, <b>X. Xiao</b>†, F Manshaii, J. Chen*. Injectable Fluorescent Neural Interfaces for Cell-Specific Stimulating and Imaging. <i>Nano Letters</i>, 2024, 24 (16), 4703–4716.</li>
-                    <li>H. Yang†, <b>X. Xiao</b>†, F. Manshaii, D. Ren, X. Li, J. Yin, Q. Li, X. Zhang, S. Xiong, Y Xi*, J. Chen*. A dual-symmetry triboelectric acoustic sensor with ultrahigh sensitivity and working bandwidth. <i>Nano Energy</i>, 2024, 109638.</li>
-                    <li>W. Yang, S. Lin, W. Gong, R. Lin, C. Jiang, X. Yang, Y. Hu, J. Wang, <b>X. Xiao</b>, K. Li, Y. Li, Q. Zhang*, J. Ho, Y. Liu, C. Hou*, H. Wang*. Single body-coupled fiber enables chipless textile electronics. <i>Science</i>, 2024, 384, 74-81.</li>
-                    <li>S. Xu, <b>X. Xiao</b>, J. Chen*. Stretchable fiber strain sensors for wearable biomonitoring. <i>National Science Review</i>, 2024, 11 (7), nwae173.</li>
-                    <li>K. Meng, Z. Liu, <b>X. Xiao</b>, F. Manshaii, P. Li, J. Yin, H. Wang, H. Mei, Y. Sun, X. He, J. Yang*, J. Chen*. Bioinspired Wearable Pulse Sensors for Ambulant Cardiovascular Monitoring and Biometric Authentication. <i>Advanced Functional Materials</i>, 2024, 2403163.</li>
-                    <li>J. Yin, S. Wang, <b>X. Xiao</b>, Y. Zhou, J. Xu, T. Tat, G. Chen, E. Zhu, T. Hsiai, J. Chen*. Structure-induced positive magnetoelastic effect in soft systems for voice recognition. <i>Nature Communications</i>, 2024, accepted.</li>
+                    <li>90. J. Yin, S. Wang, <b>X. Xiao</b>, Y. Zhou, J. Xu, T. Tat, G. Chen, E. Zhu, T. Hsiai, J. Chen*. Structure-induced positive magnetoelastic effect in soft systems for voice recognition. <i>Nature Communications</i>, 2024, accepted.</li>
+                    <li>89. K. Meng, Z. Liu, <b>X. Xiao</b>, F. Manshaii, P. Li, J. Yin, H. Wang, H. Mei, Y. Sun, X. He, J. Yang*, J. Chen*. Bioinspired Wearable Pulse Sensors for Ambulant Cardiovascular Monitoring and Biometric Authentication. <i>Advanced Functional Materials</i>, 2024, 2403163.</li>
+                    <li>88. S. Xu, <b>X. Xiao</b>, J. Chen*. Stretchable fiber strain sensors for wearable biomonitoring. <i>National Science Review</i>, 2024, 11 (7), nwae173.</li>
+                    <li>87. W. Yang, S. Lin, W. Gong, R. Lin, C. Jiang, X. Yang, Y. Hu, J. Wang, <b>X. Xiao</b>, K. Li, Y. Li, Q. Zhang*, J. Ho, Y. Liu, C. Hou*, H. Wang*. Single body-coupled fiber enables chipless textile electronics. <i>Science</i>, 2024, 384, 74-81.</li>
+                    <li>86. H. Yang†, <b>X. Xiao</b>†, F. Manshaii, D. Ren, X. Li, J. Yin, Q. Li, X. Zhang, S. Xiong, Y Xi*, J. Chen*. A dual-symmetry triboelectric acoustic sensor with ultrahigh sensitivity and working bandwidth. <i>Nano Energy</i>, 2024, 109638.</li>
+                    <li>85. S. Xu†, <b>X. Xiao</b>†, F Manshaii, J. Chen*. Injectable Fluorescent Neural Interfaces for Cell-Specific Stimulating and Imaging. <i>Nano Letters</i>, 2024, 24 (16), 4703–4716.</li>
+                    <li>84. X. Wang, <b>X. Xiao</b>, Z. Feng, Y. Wu, J. Yang*, J. Chen*. A Soft Bioelectronic Patch for Simultaneous Respiratory and Cardiovascular Monitoring. <i>Advanced Healthcare Materials</i>, 2024, 13 (6), 2303479.</li>
+                    <li>83. V. Kashyap, J. Yin, <b>X. Xiao</b>, J. Chen*. Bioinspired nanomaterials for wearable sensing and human-machine interfacing. <i>Nano Research</i>, 2024, 17 (2), 445-461.</li>
+                    <li>82. Y. Zhou, S. Wang, J. Yin, J. Wang, F. Manshaii, <b>X. Xiao</b>, T. Zhang, H. Bao, S. Jiang*, J. Chen*. Flexible Metasurfaces for Multifunctional Interfaces. <i>ACS Nano</i>, 2024, 18 (4), 2685–2707.</li>
+                    <li>81. J. Yin, V. Kashyap, S. Wang, <b>X. Xiao</b>, T. Tat, J. Chen*. Self-powered eye-computer interaction via a triboelectric nanogenerator. <i>Device</i>, 2024, 2 (1), 100252.</li>
+                    <li>80. J. Yin†, Q. Geng†, <b>X. Xiao</b>, S. Wang, L. Meng, N. Deng, J. Xu, B. Su, J. Chen, W. Zhao, L. Jin*, C. Zhao*. Mussel-inspired antibacterial sponge for highly efficient water purification and sterilization. <i>Journal of Hazardous Materials</i>, 2024, 461, 132598.</li>
+                    <li>79. G. Ge†, Y. Zhang†, <b>X. Xiao</b>†, Y. Gong, C. Liu, C. Lyu, W. Ong, G. Ho*, Z. Yang*, W. Huang*. Rapidly Gelling, Highly Adhesive, and Mechanically Robust Ionogels for Stretchable and Wireless Electronics. <i>Advanced Functional Materials</i>, 2024, 2310963.</li>
+                    <li>78. S. Mu, S. Li, H. Zhao, Z. Wang, <b>X. Xiao</b>, Z. Lin, Z. Song, H. Tang, Q. Xu, D. Wang, W. Lee*, C. Wu*, W. Ding*. A platypus-inspired electro-mechanosensory finger for remote control and tactile sensing. <i>Nano Energy</i>, 2024, 116, 108790.</li>
+                    <li>77. <b>X. Xiao</b>, Y. Zhou, J. Yin, X. Zhao, J Chen*. In-ear electrophysichochemical sensing. <i>Nature Biomedical Engineering</i>, 2023, 7, 1207–1209.</li>
+                    <li>76. H. Ma†, J. Hou†, <b>X. Xiao</b>†, R. Wan, G. Ge, W. Zheng, C. Chen, J. Cao, J. Wang, C. Liu, Q. Zhao, Z. Zhang, P. Jiang, S. Chen, W. Xiong, J. Xu, B. Lu*. Self-healing electrical bioadhesive interface for electrophysiology recording. <i>Journal of Colloid and Interface Science</i>, 2023, 654, 639-648.</li>
+                    <li>75. T. Zhao†, <b>X. Xiao</b>†, Y. Wu, J. Ma, Y. Li, C. Lu, C. Shokoohi, Y. Xu, X. Zhang, Y. Zhang, G. Ge, G. Zhang, J. Chen*, Y. Zeng*. Tracing the Flu Symptom Progression via a Smart Face Mask. <i>Nano Letters</i>, 2023, 23 (19), 8960–8969.</li>
+                    <li>74. J. Li†, B. Xia†, <b>X. Xiao</b>†, Z. Huang, J. Yin, Y. Jiang, S. Wang, H. Gao, Q. Shi, Y. Xie*, J. Chen*. Stretchable Thermoelectric Fibers with Three-Dimensional Interconnected Porous Network for Low-Grade Body Heat Energy Harvesting. <i>ACS Nano</i>, 2023, 17 (19), 19232–19241.</li>
+                    <li>73. J. Xu, J. Yin, Y. Fang, <b>X. Xiao</b>, Y. Zou, S. Wang, J. Chen*. Deep learning assisted ternary electrification layered triboelectric membrane sensor for self-powered home security. <i>Nano Energy</i>, 2023, 113, 108524.</li>
+                    <li>72. X. Tian, Q. Zeng, S. Kurt, R. Li, D. Nguyen, Z. Xiong, Z. Li, X. Yang, <b>X. Xiao</b>, C. Wu, B. Tee, D. Nikolayev, C. Charles, J. Ho*. Implant-to-implant wireless networking with metamaterial textiles. <i>Nature Communications</i>, 2023, 14 (1), 4335.</li>
+                    <li>71. J. Yin, S. Wang, A. Carlo, A. Chang, X. Wan, J. Xu, <b>X. Xiao</b>, J. Chen*. Smart textiles for self-powered biomonitoring. <i>Med-X</i>, 2023, 1 (1), 3.</li>
+                    <li>70. C. Zhang, <b>X. Xiao</b>, Z. Guo, L. Jiang, C. Yu*. Bubble transfer on wettability-heterogeneous surfaces. <i>Chinese Chemical Letters</i>, 2023, 34 (7), 107941.</li>
+                    <li>69. D. Choi, Y. Lee, Z. Lin, S. Cho, M. Kim, C. Ao, S. Soh, C. Sohn, C. Jeong, J. Lee, M. Lee, S. Lee, J. Ryu, P. Parashar, Y. Cho, J. Ahn, I. Kim, F. Jiang, P. Lee, G. Khandelwal, S. Kim, H. Kim, H. Song, M. Kim, J. Nah, W. Kim, H. Menge, Y. Park, W. Xu, J. Hao, H. Park, J. Lee, D. Lee, S. Kim, J. Park, H. Zhang, Y. Zi, R. Guo, J. Cheng, Z. Yang, Y. Xie, S. Lee, J. Chung, I. Oh, J. Kim, T. Cheng, Q. Gao, G. Cheng, G. Gu, M. Shim, J. Jung, C. Yun, C. Zhang, G. Liu, Y. Chen, S. Kim, X. Chen, J. Hu, X. Pu, Z. Guo, <b>X. Xiao</b>, X. Xie, M. Jarin, H. Zhang, Y. Lai, T. He, H. Kim, I. Park, J. Ahn, N. Huynh, Y. Yang, Z. Wang, J. Baik, D. Choi. Recent advances in triboelectric nanogenerators: from technological progress to commercial applications. <i>ACS Nano</i>, 2023, 17 (12), 11087-11219.</li>
+                    <li>68. Y. Li, J. Yin, S. Liu, B. Xue, C. Shokoohi, G. Ge, M. Hu, T. Li, X. Tao, Z. Rao, F. Meng, H. Shi, X. Ji*, P. Servati, <b>X. Xiao</b>*, J. Chen*. Learning Hand Kinematics for Parkinson's Disease Assessment Using a Multimodal Sensor Glove. <i>Advanced Science</i>, 2023, 10 (20), 2206982.</li>
+                    <li>67. H. Ma†, H. Qin†, <b>X. Xiao</b>†, N. Liu, S. Wang, J. Li, S. Shen, S. Dai, M. Sun, P. Li, X. Pan, M. Huang, B. Lu, J. Chen*, L. Wu*. Robust hydrogel sensors for unsupervised learning enabled sign-to-verbal translation. <i>Infomat</i>, 2023, 5 (7), e12419.</li>
+                    <li>66. J. Xu, T. Tat, X. Zhao, <b>X. Xiao</b>, Y. Zhou, J. Yin, K. Chen, J. Chen*. Spherical Magnetoelastic Generator for Multidirectional Vibration Energy Harvesting. <i>ACS Nano</i>, 2023, 17 (4), 3865-3872.</li>
+                    <li>65. Z. Che, S. O'Donovan, <b>X. Xiao</b>, X. Wan, G. Chen, X. Zhao, Y. Zhou, J. Yin, J. Chen*. Implantable Triboelectric Nanogenerators for Self‐Powered Cardiovascular Healthcare. <i>Small</i>, 2023, 19 (51), 2207600.</li>
+                    <li>64. Z. Gao†, <b>X. Xiao</b>†, A. Carlo, J. Yin, Y. Wang*, L. Huang*, J. Tang*, J. Chen*. Advances in Wearable Strain Sensors Based on Electrospun Fibers. <i>Advanced Functional Materials</i>, 2023, 33 (18), 2214265.</li>
+                    <li>63. G. Ge, K. Mandal, R. Haghniaz, M. Li, <b>X. Xiao</b>, L. Carlson, V. Jucaud, M. Dokmeci, G. Ho*, A. Khademhosseini*. Deep Eutectic Solvents-Based Ionogels with Ultrafast Gelation and High Adhesion in Harsh Environments. <i>Advanced Functional Materials</i>, 2023, 33 (9), 2207388.</li>
+                    <li>62. Y. Su†*, Y. Liu†, W. Li†, <b>X. Xiao</b>†, C. Chen, H. Lu, Z. Yuan, H. Tai, Y. Jiang, J. Zou*, G. Xie*, J. Chen*. Sensing–transducing coupled piezoelectric textiles for self-powered humidity detection and wearable biomonitoring. <i>Materials Horizons</i>, 2023, 10, 842-851.</li>
+                    <li>61. E. Elsanadidy, I. Mosa*, D. Luo, <b>X. Xiao</b>, J. Chen, Z. Wang*, J. Rusling*. Advances in Triboelectric Nanogenerators for Self-powered Neuromodulation. <i>Advanced Functional Materials</i>, 2023, 33 (8), 2211177.</li>
+                    <li>60. S. Wang, W. Deng, T. Yang*, G. Tian, D. Xiong, <b>X. Xiao</b>, H. Zhang, Y. Sun, Y. Ao, J. Huang, J. Chen*, W. Yang*. Body-area sensor network featuring micropyramids for sports healthcare. <i>Nano Research</i>, 2023, 16 (1), 1330-1337.</li>
+                    <li>59. Z. Peng, J. Shi, <b>X. Xiao</b>, Y. Hong, X. Li, W. Zhang, Y. Cheng, Z. Wang, W.Li, J. Chen, M. Leung, Z. Yang. Self-charging electrostatic face masks leveraging triboelectrification for prolonged air filtration. <i>Nature Communications</i>, 2022, 13 (1), 7835.</li>
+                    <li>58. Z. Peng†, <b>X. Xiao</b>†, J. Song, A. Libanori, C. Lee, K. Chen, Y. Gao, Y. Fang, J. Wang, Z. Wang, J. Chen, M. Leung. Improving Relative Permittivity and Suppressing Dielectric Loss of Triboelectric Layers for High-Performance Wearable Electricity Generation. <i>ACS Nano</i>, 2022, 16 (12), 20251-20262.</li>
+                    <li>57. A. Libanori, J. Soto, J. Xu, Y. Song, J. Zarubova, T. Tat, <b>X. Xiao</b>, S. Yue, S. Jonas, S. Li, J. Chen. Self‐Powered Programming of Fibroblasts into Neurons via a Scalable Magnetoelastic Generator Array. <i>Advanced Materials</i>, 2022, 35 (7), 2206933.</li>
+                    <li>56. <b>X. Xiao</b>, J. Yin, S. Shen, Z. Che, X. Wan, S. Wang, J. Chen. Advances in solid-state fiber batteries for wearable bioelectronics. <i>Current Opinion in Solid State and Materials Science</i>, 2022, 26 (6), 101042.</li>
+                    <li>55. A. Alagumalai, O. Mahian, K. Vimal, L. Yang, <b>X. Xiao</b>, S. Saeidi, P. Zhang, T. Saboori, S. Wongwises, Z. Wang, J. Chen*. A contextual framework development toward triboelectric nanogenerator commercialization. <i>Nano Energy</i>, 2022, 101, 107572.</li>
+                    <li>54. J. Xu, H. Cai, Z. Wu, C. Tian, X. Li, Z. Ao, V. Niu, <b>X. Xiao</b>, L. Jiang, M. Khodoun, M. Rothenberg, K. Mackie, J. Chen*, L. Lee*, F. Guo*. Acoustic metamaterials driven transdermal drug delivery for rapid and on-demand management of acute disease. <i>Nature Communications</i>, 2022, 14, 869.</li>
+                    <li>53. S. Shen†, <b>X. Xiao</b>†, J. Yin, X. Xiao, J Chen*. Self‐Powered Smart Gloves Based on Triboelectric Nanogenerators. <i>Small Methods</i>, 2022, 6 (10), 2200830.</li>
+                    <li>52. Y. Deng, Y. Wang, <b>X. Xiao</b>, B. Saucedo, Z. Zhu*, M. Xie, X. Xu, K. Yao, Yanling Zhai*, Zhen Zhang*, Jun Chen*. Progress in hybridization of covalent organic frameworks and metal–organic frameworks. <i>Small</i>, 2022, 18 (38), 2202928.</li>
+                    <li>51. J. Xu, T. Tat, X. Zhao, Y. Zhou, D. Ngo, <b>X. Xiao</b>, J. Chen*. A programmable magnetoelastic sensor array for self-powered human–machine interface. <i>Applied Physics Reviews</i>, 2022, 9 (3), 031404.</li>
+                    <li>50. Y. Su, W. Li, X. Cheng, Y. Zhou, S. Yang, X. Zhang, C. Chen, T. Yang, H. Pan, G. Xie, G. Chen, X. Zhao, <b>X. Xiao</b>, B. Li*, H. Tai, Y. Jiang, L. Chen, F. Li*, J. Chen*. High-performance piezoelectric composites via β phase programming. <i>Nature Communications</i>, 2022, 13, 4867.</li>
+                    <li>49. R. Guo, Y. Fang, Z. Wang, A. Libanori, <b>X. Xiao</b>, D. Wan, X. Cui, S. Sang, W. Zhang, H. Zhang*, J. Chen*. Deep Learning Assisted Body Area Triboelectric Hydrogel Sensor Network for Infant Care. <i>Advanced Functional Materials</i>, 2022, 32 (35), 2204803.</li>
+                    <li>48. Y. Zhou, <b>X. Xiao</b>, G. Chen, X. Zhao, J Chen*. Self-powered sensing technologies for human Metaverse interfacing. <i>Joule</i>, 2022, 6 (7), 1381-1389.</li>
+                    <li>47. K. Meng†, <b>X. Xiao</b>†, Z. Liu, S. Shen, T. Tat, Z. Wang, C. Lu, W. Ding, X. He, J. Yang*, J. Chen*. Kirigami Inspired Pressure Sensors for Wearable Dynamic Cardiovascular Monitoring. <i>Advanced Materials</i>, 2022, 34 (36), 2202478.</li>
+                    <li>46. C. Zhang†, <b>X. Xiao</b>†, Y. Zhang†, Z. Liu, X. Xiao, A. Nashalian, X. Wang, M. Cao*, X. He, J. Chen*, L. Jiang, C. Yu*. Bioinspired Anisotropic Slippery Cilia for Stiffness-Controllable Bubble Transport. <i>ACS Nano</i>, 2022, 16 (6), 9348–9358.</li>
+                    <li>45. <b>X. Xiao</b>, J. Yin, G. Chen, S. Shen, A. Nashalian, J. Chen*. Bioinspired acoustic textiles with nanoscale vibrations for wearable biomonitoring. <i>Matter</i>, 2022, 5 (5), 1342-1345.</li>
+                    <li>44. F. Jia†, <b>X. Xiao</b>†, A. Nashalian, S. Shen, L. Yang, Z. Han, H. Qu, T. Wang, Z. Ye, Z. Zhu, L. Huang*, Y. Wang*, J. Tang*, J. Chen*. Advances in graphene oxide membranes for water treatment. <i>Nano Research</i>, 2022, 15, 6636–6654.</li>
+                    <li>43. A. Chang†, C. Uy†, <b>X. Xiao</b>†, J. Chen*. Self-Powered Environmental Monitoring Via a Triboelectric Nanogenerator. <i>Nano Energy</i>, 2022, 98, 107282.</li>
+                    <li>42. H. Qu†, <b>X. Xiao</b>†, Z. Han, M. Hu, S. Shen, L. Yang, F. Jia, T. Wang, Z. Ye. W. Sun, L. Y. Wang*, Huang*, Z. Zhu, P. Servati, J. Tang*, J. Chen*. Graphene Oxide Nanofiltration Membrane Based on Three-Dimensional Size-Controllable Metal–Organic Frameworks for Water Treatment. <i>ACS Applied Nano Materials</i>, 2022, 5 (4), 5196–5207.</li>
+                    <li>41. Y. Luo, <b>X. Xiao</b>, J. Chen, Q. Li, H. Fu*. Machine-Learning-Assisted Recognition on Bioinspired Soft Sensor Arrays. <i>ACS Nano</i>, 2022, 16 (4), 6734–6743.</li>
+                    <li>40. Y. Fang, J. Xu, <b>X. Xiao</b>, Y. Zou, X. Zhao, Y. Zhou, J. Chen*. A Deep-learning-assisted on‐mask sensor network for adaptive respiratory monitoring. <i>Advanced Materials</i>, 2022, 34 (24), 2200252.</li>
+                    <li>39. P. Abiri, Y. Luo, Z. Huang, Q. Cui, S. Duarte-Vogel, M. Roustaei, C. Chang, <b>X. Xiao</b>, R. Packard, S. Cavallero, R. Ebrahimi, P. Benharash, J. Chen, Y. Tai, T. Hsiai*. 3-Dimensional electrical impedance spectroscopy for in situ endoluminal mapping of metabolically active plaques. <i>Sensors and Actuators B: Chemical</i>, 2022, 354, 131152.</li>
+                    <li>38. B. Liu, A. Libanori, Y. Zhou, <b>X. Xiao</b>, G. Xie, X. Zhao, Y. Su, S. Wang, Z. Yuan, Z. Duan, J. Liang, Y. Jiang, H. Tai*, J. Chen*. Simultaneous Biomechanical and Biochemical Monitoring for Self-Powered Breath Analysis. <i>ACS Applied Materials & Interfaces</i>, 2022, 14 (5), 7301–7310.</li>
+                    <li>37. D. Yu†, <b>X. Xiao</b>†, C. Shokoohi, Y. Wang*, L. Sun, Z. Juan, M. Kipper, J. Tang*, L. Huang*, G. Han, H. Jung, J. Chen*. Recent Advances in Stimuli‐Responsive Smart Membranes for Nanofiltration. <i>Advanced Functional Materials</i>, 2022, 33 (9), 2211983.</li>
+                    <li>36. M. Mayer†, <b>X. Xiao</b>†, J. Yin, G. Chen, J. Xu, J. Chen*. Advances in Bioinspired Triboelectric Nanogenerators. <i>Advanced Electronic Materials</i>, 2022, 8 (12), 2200782.</li>
+                    <li>35. B. Lan†, <b>X. Xiao</b>†, A. Carlo, W. Deng, T. Yang, L. Jin, G. Tian, Y. Ao, W. Yang*, J. Chen*. Topological Nanofibers Enhanced Piezoelectric Membranes for Soft Bioelectronics. <i>Advanced Functional Materials</i>, 2022, 32 (49), 2207393.</li>
+                    <li>34. B. Dai†, Y. Zhou†, <b>X. Xiao</b>†, Y. Chen, J. Guo, C. Gao, Y. Xie, J. Chen*. Fluid Field Modulation in Mass Transfer for Efficient Photocatalysis. <i>Advanced Science</i>, 2022, 9 (28), 2203057.</li>
+                    <li>33. Q. Wang, S. He, C. Bowen, <b>X. Xiao</b>, J. Oh, J. Sun, K. Zeng, W. Lei, J. Chen*. Porous Pyroelectric Ceramic with Carbon Nanotubes for High-Performance Thermal to Electrical Energy Conversion. <i>Nano Energy</i>, 2022, 102, 107703.</li>
+                    <li>32. X. Li†, <b>X. Xiao</b>†, C. Bai, M. Mayer, X. Cui, K. Lin, Y. Li, H. Zhang*, J. Chen*. Thermogalvanic Hydrogels for Self-Powered Temperature Monitoring in Extreme Environments. <i>Journal of Materials Chemistry C</i>, 2022, 10, 13789-13796.</li>
+                    <li>31. L. Yang†, <b>X. Xiao</b>†, S. Shen, J. Lama, M. Hu, F. Jia, Z. Han, H. Qu, L. Huang*, Y. Wang*, T. Wang, Z. Ye, Z. Zhu, J. Tang*, J. Chen*. Recent Advances in Graphene Oxide Membranes for Nanofiltration. <i>ACS Applied Nano Materials</i>, 2022, 5 (3), 3121–3145.</li>
+                    <li>30. K. Meng†, <b>X. Xiao</b>†, W. Wei, G. Chen, A. Nashalian, S. Shen, X. Xiao, J. Chen*. Wearable pressure sensors for pulse wave monitoring. <i>Advanced Materials</i>, 2022, 34 (21), 2109357.</li>
+                    <li>29. Y. Zhai, J. Li, S. Shen, Z. Zhu, S. Mao, <b>X. Xiao</b>, C. Zhu, J. Tang, X. Lu, J. Chen*. Recent Advances on Dual‐Band Electrochromic Materials and Devices. <i>Advanced Functional Materials</i>, 2022, 32 (17), 2109848.</li>
+                    <li>28. H. Liu, C. Wang, G. Chen, Y. Liao, M. Mao, T. Cheng, A. Libanori, <b>X. Xiao</b>, X. Hu, K. Liu, J. Chen*. Moisture assisted photo-engineered textiles for visible and self-adaptive infrared dual camouflage. <i>Nano Energy</i>, 2022, 93, 106855.</li>
+                    <li>27. Z. Han†, <b>X. Xiao</b>†, H. Qu, M. Hu, C. Au, A. Nashalian, X. Xiao, Y. Wang, L. Yang, F. Jia, T. Wang, Z. Ye, P. Servati, L. Huang*, Z. Zhu, J. Tang*, J. Chen*. Ultrafast and Selective Nanofiltration Enabled by Graphene Oxide Membranes with Unzipped Carbon Nanotube Networks. <i>ACS Applied Materials & Interfaces</i>, 2022, 14 (1), 1850–1860.</li>
+                    <li>26. Q. Wei, G. Chen, H. Pan, Z. Ye, C. Au, C. Chen, X. Zhao, Y. Zhou, <b>X. Xiao</b>, H. Tai, Y. Jiang, G. Xie, Y. Su, J. Chen*. MXene‐Sponge Based High‐Performance Piezoresistive Sensor for Wearable Biomonitoring and Real‐Time Tactile Sensing. <i>Small Methods</i>, 2022, 6 (2), 2101051.</li>
+                    <li>25. Z. Lin, G. Zhang, <b>X. Xiao</b>, C. Au, Y. Zhou, C. Sun, Z. Zhou, R. Yan, E. Fan, S. Si, L. Weng, S. Mathur, J. Yang*, J. Chen*. A Personalized Acoustic Interface for Wearable Human–Machine Interaction. <i>Advanced Functional Materials</i>, 2022, 32 (9), 2109430.</li>
+                    <li>24. W. Deng, A. Libanori, <b>X. Xiao</b>, J. Fang, X. Zhao, Y. Zhou, G. Chen, S. Li, J. Chen*. Computational investigation of ultrasound induced electricity generation via a triboelectric nanogenerator. <i>Nano Energy</i>, 2022, 91, 106656.</li>
+                    <li>23. S. Shen†, <b>X. Xiao</b>†, X. Xiao, J. Chen*. Triboelectric Nanogenerators for Self-Powered Breath Monitoring. <i>ACS Applied Energy Materials</i>, 2022, 5 (4), 3952–3965.</li>
+                    <li>22. <b>X. Xiao</b>†, X. Xiao†, Y. Zhou, X. Zhao, G. Chen, Z. Liu, Z. Wang, C. Lu, M. Hu, A. Nashalian, S. Shen, K. Xie, W. Yang, Y. Gong*, W. Ding, P. Servati, C. Han, S. Dou, W. Li*, Jun Chen*. An ultrathin rechargeable solid-state zinc ion fiber battery for electronic textiles. <i>Science Advances</i>, 2021, 7 (49), eabl3742.</li>
+                    <li>21. X. Zhao, Y. Zhou, J. Xu, G. Chen, Y. Fang, T. Tat, <b>X. Xiao</b>, Y. Song, S. Li, J. Chen*. Soft fibers with magnetoelasticity for wearable electronics. <i>Nature Communications</i>, 2021, 12, 6755.</li>
+                    <li>20. <b>X. Xiao</b>, Y. Fang, X. Xiao, J. Xu, J. Chen*. Machine-Learning-Aided Self-Powered Assistive Physical Therapy Devices. <i>ACS Nano</i>, 2021, 15 (12), 18633–18646.</li>
+                    <li>19. S. Parandeh, N. Etemadi, M. Kharaziha, G. Chen, A. Nashalian, <b>X. Xiao</b>, J. Chen*. Advances in triboelectric nanogenerators for self‐powered regenerative medicine. <i>Advanced Functional Materials</i>, 2021, 31 (47), 2105169.</li>
+                    <li>18. Y. Luo, Z. Wang, J. Wang, <b>X. Xiao</b>, Q. Li, W. Ding*, H. Fu*. Triboelectric bending sensor based smart glove towards intuitive multi-dimensional human-machine interfaces. <i>Nano Energy</i>, 2021, 89, 106330.</li>
+                    <li>17. <b>X. Xiao</b>, X. Xiao, A. Nashalian, A. Libanori, Y. Fang, X. Li, J. Chen*. Triboelectric Nanogenerators for Self‐Powered Wound Healing. <i>Advanced Healthcare Materials</i>, 2021, 10 (20), 2100975.</li>
+                    <li>16. Z. Zhang†, <b>X. Xiao</b>†, Y. Zhou, L. Huang*, Y. Wang, Q. Rong, Z. Han, H. Qu, Z. Zhu, S. Xu, J. Tang*, J. Chen*. Bioinspired Graphene Oxide Membranes with pH-Responsive Nanochannels for High-Performance Nanofiltration. <i>ACS Nano</i>, 2021, 15 (8), 13178–13187.</li>
+                    <li>15. <b>X. Xiao</b>†, X. Xiao†, Y. Lan, J. Chen*. Learning from nature for healthcare, energy and environment. <i>The Innovation</i>, 2021, 2 (3), 100135.</li>
+                    <li>14. X. Chu, G. Chen, <b>X. Xiao</b>, Z. Wang, T. Yang, Z. Xu, H. Huang, Y. Wang, C. Yan, N. Chen, H. Zhang, W. Yang*, J. Chen*. Air-Stable Conductive Polymer Ink for Printed Wearable Micro-Supercapacitors. <i>Small</i>, 2021, 17 (25), 2100956.</li>
+                    <li>13. Y. Fang, X. Zhao, T. Tat, <b>X. Xiao</b>, G. Chen, J. Xu, J. Chen. All-in-one conformal epidermal patch for multimodal biosensing. <i>Matter</i>, 2021, 4 (4), 1102-1105.</li>
+                    <li>12. S. Zhang, M. Bick, <b>X. Xiao</b>, G. Chen, A. Nashalian, J. Chen*. Leveraging triboelectric nanogenerators for bioengineering. <i>Matter</i>, 2021, 4 (3), 845-887.</li>
+                    <li>11. <b>X. Xiao</b>, S. Li, X. Zhu, X. Xiao, C. Zhang, F. Jiang, C. Yu*, L. Jiang. Bioinspired two-dimensional structure with asymmetric wettability barriers for unidirectional and long-distance gas bubble delivery underwater. <i>Nano Letters</i>, 2021, 21 (5), 2117-2123.</li>
+                    <li>10. <b>X. Xiao</b>†, G. Chen†, A. Libanori, J. Chen*. Wearable triboelectric nanogenerators for therapeutics. <i>Trends in Chemistry</i>, 2021, 3 (4), 279-290.</li>
+                    <li>9. G. Chen†, <b>X. Xiao</b>†, X. Zhao†, T Tat, M Bick, J Chen*. Electronic Textiles for Wearable Point-of-Care Systems. <i>Chemical Reviews</i>, 2021, 122 (3), 3259–3291.</li>
+                    <li>8. M. Mahmud†, T. Tat†, <b>X. Xiao</b>†, P. Adhikary, J. Chen*. Advances in 4D‐printed physiological monitoring sensors. <i>Exploration</i>, 2021, 1 (3), 210033.</li>
+                    <li>7. X. Yan†, <b>X. Xiao</b>†, C. Au, S. Mathur, L. Huang*, Y. Wang, Z. Zhang, Z. Zhu, M. Kipper, J. Tang*, J. Chen*. Electrospinning nanofibers and nanomembranes for oil/water separation. <i>Journal of Materials Chemistry A</i>, 2021, 9, 21659-21684.</li>
+                    <li>6. S. Shen†, <b>X. Xiao</b>†, J. Chen*. Wearable Triboelectric Nanogenerators for Heart Rate Monitoring. <i>Chemical Communications</i>, 2021, 57, 5871-5879.</li>
+                    <li>5. L. Jin†, <b>X. Xiao</b>†, W. Deng, A. Nashalian, D. He, V. Raveendran, C. Yan, H. Su, X. Chu, T. Yang, W. Li, W. Yang, J. Chen*. Manipulating relative permittivity for high-performance wearable triboelectric nanogenerators. <i>Nano Letters</i>, 2020, 20 (9), 6404-6411.</li>
+                    <li>4. Z. Meng, S. Casanova, H. Mohamed, N. Kapil, <b>X. Xiao</b>, Y. Zhang, M. Coppens*, D. Mattia*. Polymer nanotube membranes synthesized via liquid deposition in anodic alumina. <i>Colloid and Interface Science Communications</i>. 2020, 39, 100334.</li>
+                    <li>3. C. Zhang, B. Zhang, H. Ma, Z. Li, <b>X. Xiao</b>, Y. Zhang, X. Cui, C. Yu*, M. Cao*, L. Jiang. Bioinspired pressure-tolerant asymmetric slippery surface for continuous self-transport of gas bubbles in aqueous environment. <i>ACS Nano</i>, 2018, 12 (2), 2048-2055.</li>
+                    <li>2. C. Zhang, Y. Zhang, <b>X. Xiao</b>, G. Liu, Z. Xu, B. Wang, C. Yu*, R. Ras, L. Jiang. Efficient separation of immiscible oil/water mixtures using a perforated lotus leaf. <i>Green Chemistry</i>, 2019, 21 (24), 6579-6584.</li>
+                    <li>1. <b>X. Xiao</b>, C. Zhang, H. Ma, Y. Zhang, G. Liu, M. Cao, C. Yu*, L. Jiang*. Bioinspired slippery cone for controllable manipulation of gas bubbles in low-surface-tension environment. <i>ACS Nano</i>, 2019, 13 (4), 4083-4090.</li>
                 </ol>
             </div>
         </section>
-        <section id="contact">
+    </div>
+    <div id="mentees" class="container">
+        <section>
+            <h2 class="section-title">Mentees</h2>
+            <div class="content">
+                <ul>
+                    <li>John Doe - Ph.D. student at NUS, co-authored 3 papers on bioinspired materials.</li>
+                    <li>Jane Smith - M.S. student at UCLA, focused on energy harvesting technologies.</li>
+                    <li>Emily Johnson - Undergraduate student at Beihang University, involved in sensing technologies research.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div id="contact" class="container">
+        <section>
             <h2 class="section-title">Contact Information</h2>
             <div class="content">
                 <p>Address: iHealthtech @ E7, Block E7, #07-01, 15 Kent Ridge Crescent, Singapore 119276</p>
